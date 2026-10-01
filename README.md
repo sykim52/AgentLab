@@ -1,4 +1,4 @@
-# agent-lab
+# AgentLab
 
 Laboratory for **agentic AI systems** and applied ML experiments.
 
@@ -14,8 +14,8 @@ Not a production product. The embedded track is a **software simulation** only â
 ## Quick start
 
 ```bash
-git clone https://github.com/sykim52/agent-lab.git
-cd agent-lab
+git clone https://github.com/sykim52/AgentLab.git
+cd AgentLab
 
 python3 -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
