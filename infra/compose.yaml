@@ -1,0 +1,23 @@
+# Optional local services for agent-lab (Neo4j = optional graph stack)
+#
+# Local-only auth via env — do not commit real secrets.
+#   export NEO4J_PASSWORD='your-local-password'
+#   docker compose --profile graph up -d
+
+services:
+  neo4j:
+    image: neo4j:5
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      NEO4J_AUTH: "neo4j/${NEO4J_PASSWORD:?set NEO4J_PASSWORD for local Neo4j}"
+      NEO4J_PLUGINS: '["apoc"]'
+    volumes:
+      - neo4j_data:/data
+    profiles: ["graph"]
+
+volumes:
+  neo4j_data:
+
+# Schema-only ontology API works without Neo4j today.
